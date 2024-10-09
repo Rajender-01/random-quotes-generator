@@ -7,8 +7,69 @@
   &__cont {
     width: 100%;
     max-width: 600px;
-    padding: 2rem;
+    gap: 1.7rem;
+    padding: 2.5rem 2rem;
     border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &__heading {
+    font-size: 35px;
+    position: relative;
+    margin-bottom: 1rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+      width: 23%;
+      height: 4px;
+      background: linear-gradient(90deg, rgb(22, 19, 212) 0%, rgba(0, 255, 248, 1) 100%);
+    }
+  }
+
+  &__quoteCont {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 100%;
+  }
+
+  &__quote {
+    font-size: 23px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-block: 1.5rem;
+  }
+
+  &__author {
+    align-self: end;
+    font-weight: 500;
+  }
+
+  &__btns {
     gap: 1rem;
   }
+
+  &__generatebtn {
+    gap: 0.5rem;
+  }
+}
+.loader {
+  width: 15px;
+  height: 15px;
+  display: none;
+  border: 2px solid rgb(255, 255, 255); 
+  border-top: 2px solid rgb(19, 91, 212);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

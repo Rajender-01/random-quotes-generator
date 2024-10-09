@@ -10,15 +10,21 @@
 
 <body>
   <div class="quotes flex-center">
-    <div class="quotes__cont">
+    <div class="quotes__cont flex-col-center">
       <h1 class="quotes__heading">Quotes of the Day</h1>
-      <p class="quotes__quote">quotes</p>
-      <div class="quotes__btns">
-        <button class="quotes__generatebtn">Shuffle</button>
-        <button class="quotes__twitterbtn">Twitter</button>
+      <div class="quotes__quoteCont">
+        <p class="quotes__quote ">Without some goals and some efforts to reach it, no man can live
+        </p>
+        <span class="quotes__author">-- Agatha Christie </span>
+      </div>
+      <div class="quotes__btns flex-center">
+        <button id="quoteBtn" class="button quotes__generatebtn flex-center">Get Quote</button>
+        <button class="button quotes__twitterbtn">Twitter</button>
+        <button class="button quotes__facebookbtn">Facebook</button>
       </div>
     </div>
   </div>
+  <div class="loader"></div>
   <script type="module" src="/src/main.ts"></script>
 </body>
 
