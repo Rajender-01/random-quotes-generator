@@ -54,4 +54,22 @@
   &__btns {
     gap: 1rem;
   }
+
+  &__generatebtn {
+    gap: 0.5rem;
+  }
+}
+.loader {
+  width: 15px;
+  height: 15px;
+  display: none;
+  border: 2px solid rgb(255, 255, 255); 
+  border-top: 2px solid rgb(19, 91, 212);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

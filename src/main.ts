@@ -15,12 +15,16 @@ const GetRandomQuotes = async (URL: string) => {
     }
     const data = await response.json();
     if (Quote && Author) {
-      Quote.textContent = data.content;
-      Author.textContent = `-- ${data.author}`;
+      Quote.textContent = data.content ? data.content : "LOADING...";
+      Author.textContent = `-- ${data.author ? data.author : "..."}`;
     }
   } catch (error) {
-    console.error("Failed to fetch quote:", error); 
+    console.error("Failed to fetch quote:", error);
   }
 };
 
-Button?.addEventListener("click", () => GetRandomQuotes(API_URL));
+Button?.addEventListener("click", async () => {
+  Button.textContent = "Loading...";
+  await GetRandomQuotes(API_URL);
+  Button.textContent = "Get Quote";
+});
