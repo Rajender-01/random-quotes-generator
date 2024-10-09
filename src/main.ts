@@ -1,7 +1,10 @@
 import "./scss/reset.scss";
 import "./scss/quote.scss";
 
-const button = document.querySelector("#quoteBtn");
+const Button = document.querySelector("#quoteBtn");
+const Quote = document.querySelector(".quotes__quote");
+const Author = document.querySelector(".quotes__author");
+
 const API_URL = "https://api.quotable.io/random";
 
 const GetRandomQuotes = async (URL: string) => {
@@ -11,10 +14,13 @@ const GetRandomQuotes = async (URL: string) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log("data", data);
+    if (Quote && Author) {
+      Quote.textContent = data.content;
+      Author.textContent = `-- ${data.author}`;
+    }
   } catch (error) {
-    console.error("Failed to fetch quote:", error);
+    console.error("Failed to fetch quote:", error); 
   }
 };
 
-button?.addEventListener("click", () => GetRandomQuotes(API_URL));
+Button?.addEventListener("click", () => GetRandomQuotes(API_URL));
